@@ -5,6 +5,12 @@
       <option name="ignoredIdentifiers">
         <list>
           <option value="calculator.calc.db" />
+          <option value="sqlalchemy_wrapper.main.SQLAlchemy.ForiegnKey" />
+          <option value="sqlalchemy_wrapper.main.SQLAlchemy.Integer" />
+          <option value="sqlalchemy_wrapper.main.SQLAlchemy.relationship" />
+          <option value="sqlalchemy_wrapper.main.SQLAlchemy.Column" />
+          <option value="sqlalchemy_wrapper.main.SQLAlchemy.String" />
+          <option value="sqlalchemy_wrapper.main.SQLAlchemy.ForeignKey" />
         </list>
       </option>
     </inspection_tool>
