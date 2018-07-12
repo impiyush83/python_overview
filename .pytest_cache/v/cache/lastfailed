@@ -1,5 +1,0 @@
-{
-  "tests/test_user_creation.py::TestCalcWorking::()::test_alpha_char": true, 
-  "tests/test_user_creation.py::TestCalcWorking::()::test_answer": true, 
-  "tests/test_user_creation.py::TestCalcWorking::()::test_check_duplicacy_of_question": true
-}
