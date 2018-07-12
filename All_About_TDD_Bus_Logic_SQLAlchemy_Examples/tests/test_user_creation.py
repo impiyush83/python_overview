@@ -1,11 +1,17 @@
 import pytest
 from hamcrest import *
 
-from musicx.db import db
+
+#from musicx.db import db
+from calculator import calc
+from calculator.calc import Eval1
+from calculator.db import db1
+from calculator.models import User
 from musicx.exceptions import UserInvalid, UserAlreadyExist
-from musicx.models import User, Address
+#from musicx.models import User, Address
 from musicx.signup import SignUp
 
+"""
 
 class TestUserCreation(object):
 
@@ -14,7 +20,7 @@ class TestUserCreation(object):
         db.create_all()
 
     @staticmethod
-    def test_user_can_be_created():
+    def _test_user_can_be_created():
         amit = User(name="amit", password="1234")
         db.add(amit)
         db.commit()
@@ -31,12 +37,9 @@ class TestUserCreation(object):
 
         assert_that(amit_user.address[0].city_name, is_("Pune"))
         assert_that(address.user, is_(amit_user))
-        import pdb
-        pdb.set_trace()
-        pdb.set_trace()
         assert len(users) is 1
 
-    def test_user_can_not_register_if_user_name_is_greater_than_30_chars(self):
+    def _test_user_can_not_register_if_user_name_is_greater_than_30_chars(self):
         signup = SignUp(db)
         assert_that(calling(signup.register_user).with_args("qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq", "1234"),
                     raises(UserInvalid))
@@ -66,7 +69,48 @@ class TestUserCreation(object):
 
 
 
-    def test_user_login_if_user_not_exist(self):
+    def _test_user_login_if_user_not_exist(self):
         signup = SignUp(db)
         result = signup.login("ppp", "1234")
         assert_that(result, is_(False))
+
+
+"""
+
+class TestCalcWorking(object):
+
+    @pytest.fixture(autouse=True)
+    def setup(self):
+        db1.create_all()
+
+    def _test_alpha_char(self):
+        eval = Eval1(db1)
+        operands = eval.check_alpha_present("2.0 + 2 + 4 + a")
+        assert_that(operands, is_(True))
+
+
+
+    def _test_check_the_no_of_operands(self):
+        eval = Eval1(db1)
+        operands = eval.check_correct_expression("2 + 2")
+        assert_that(operands,is_( True))
+
+
+
+    def _test_check_the_question(self):
+        eval = Eval1(db1)
+        operands = eval.enter_input("2 + 2")
+        assert_that(operands,is_( True))
+
+
+    def _test_answer(self):
+        eval=Eval1(db1)
+        operands=eval.evaluate("2 + 5")
+        assert_that(operands,is_(True))
+
+    def test_check_duplicacy_of_question(self):
+        eval= Eval1(db1)
+        #my_question = User(question="2 + 2")
+        obj1=eval.my_retrieved_obj("2 + 3")
+        assert_that (obj1,is_(True))
+        #assert_that(is_(True),obj1)

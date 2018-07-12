@@ -1,0 +1,7 @@
+{
+  "test_user_creation.py::TestCalcWorking::()": true, 
+  "test_user_creation.py::TestCalcWorking::()::test_alpha_char": true, 
+  "test_user_creation.py::TestCalcWorking::()::test_check_the_question": true, 
+  "test_user_creation.py::TestUserCreation::()::test_duplicate_user_can_not_exist": true, 
+  "test_user_creation.py::TestUserCreation::()::test_user_login_if_user_not_exist": true
+}

@@ -3,6 +3,7 @@ attrs==18.1.0
 funcsigs==1.0.2
 inflection==0.3.1
 more-itertools==4.2.0
+passlib==1.7.1
 pluggy==0.6.0
 py==1.5.4
 PyHamcrest==1.9.0

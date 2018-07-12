@@ -22,7 +22,11 @@ class SignUp(object):
             raise UserAlreadyExist()
 
     def login(self, user_name, password):
-        user = self.db.query(User).filter_by(name=user_name).first()
-        if user and user.password == password:
-            return True
-        return False
+        user = self.db.query(User).filter_by(name=user_name).all()
+        if len(user)>0:
+            for i in user:
+                if i and i.password == password:
+                    return True
+            return False
+        else:
+            return False
