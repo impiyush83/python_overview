@@ -22,6 +22,7 @@ class Mobile(db.Model):
 
 db.create_all()
 
+
 p2=Person(id=2, name="Piyush")
 m1=Mobile(name="Motogg", person=p2)
 db.add(m1)
