@@ -11,6 +11,8 @@
           <option value="sqlalchemy_wrapper.main.SQLAlchemy.Column" />
           <option value="sqlalchemy_wrapper.main.SQLAlchemy.String" />
           <option value="sqlalchemy_wrapper.main.SQLAlchemy.ForeignKey" />
+          <option value="sqlalchemy_wrapper.main.SQLAlchemy.add_al" />
+          <option value="sqlalchemy_wrapper.main.SQLAlchemy.add_all" />
         </list>
       </option>
     </inspection_tool>

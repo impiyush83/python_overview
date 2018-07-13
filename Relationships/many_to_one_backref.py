@@ -26,19 +26,27 @@ class Pet(db.Model):
     owner_id = db.Column(db.Integer,db.ForeignKey('person.id'))
 
 db.create_all()
+#
+# p1=Person(name="p1")
+# db.add(p1)
+# p2=Person(name="p2")
+# db.add(p2)
+# # p3=Person(name="p3")
+# db.add(p3)
+# db.commit()
+#
+# db.add(Pet(name="spot1",owner=p2))
+# db.add(Pet(name="spot2",owner=p3))
+# db.add(Pet(name="spot3",owner=p3))
+# db.add(Pet(name="spot4",owner=p1))
+# db.add(Pet(name="spot5",owner=p1))
+# db.add(Pet(name="spot6",owner=p1))
 
-
-p1 = db.add(Person(name="p1"))
-p2=db.add(Person(name="p2"))
-p3=db.add(Person(name="p3"))
-db.commit()
-
-db.add(Pet(name="spot1",owner=p2))
-db.add(Pet(name="spot2",owner=p3))
-db.add(Pet(name="spot3",owner=p3))
-db.add(Pet(name="spot4",owner=p1))
-db.add(Pet(name="spot5",owner=p1))
-db.add(Pet(name="spot6",owner=p1))
+p3 = db.query(Person).filter_by(name="p3").all()
+print p3
+for i in p3:
+    for j in i.pets :
+        print j.name
 
 db.commit()
 
