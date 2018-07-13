@@ -22,10 +22,16 @@ class Mobile(db.Model):
 
 db.create_all()
 
+p1=Person(id=1, name="Akshay")
+p2 = Person(id=2, name="Piyush")
+db.add(p1)
+db.add(p2)
+db.commit()
 
-p2=Person(id=2, name="Piyush")
-m1=Mobile(name="Motogg", person=p2)
+m1=Mobile(id=1, name="Moto", person=p1)
+m2=Mobile(id=2, name="1+6", person=p2)
 db.add(m1)
+db.add(m2)
 db.commit()
 
 
