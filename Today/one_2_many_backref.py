@@ -4,7 +4,7 @@ from sqlalchemy import Column, Integer, ForeignKey, String
 from sqlalchemy.orm import relationship
 from sqlalchemy_wrapper import SQLAlchemy
 
-db = SQLAlchemy('sqlite:///onetomany.db')
+db = SQLAlchemy('sqlite:///o2m.db')
 
 
 class Person(db.Model):

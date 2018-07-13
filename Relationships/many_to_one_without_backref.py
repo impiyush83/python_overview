@@ -12,7 +12,7 @@ class Company(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(20))
     employee_id = db.Column(db.Integer, db.ForeignKey('employee.id'))
-    employee = db.relationship('Employee',backref='companies')
+    employee = db.relationship('Employee')
 
 
 # backref creates a virtual coloumn owner which takes Person object
@@ -25,7 +25,7 @@ class Employee(db.Model):
     __tablename__ = "employee"
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(20))
-
+    companies = db.relationship('Company')
 
 
 db.create_all()
