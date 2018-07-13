@@ -30,7 +30,7 @@ class Employee(db.Model):
 
 db.create_all()
 
-
+#piysuh
 # e1=Employee(name="piyu")
 # e2=Employee(name="siyu")
 # e3=Employee(name="hiyu")

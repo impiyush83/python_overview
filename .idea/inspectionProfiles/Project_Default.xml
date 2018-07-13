@@ -13,6 +13,7 @@
           <option value="sqlalchemy_wrapper.main.SQLAlchemy.ForeignKey" />
           <option value="sqlalchemy_wrapper.main.SQLAlchemy.add_al" />
           <option value="sqlalchemy_wrapper.main.SQLAlchemy.add_all" />
+          <option value="Relationships.many_to_many_without_backref.*" />
         </list>
       </option>
     </inspection_tool>
