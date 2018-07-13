@@ -17,8 +17,8 @@ class Student(db.Model):
     age = db.Column(Integer)
 
     def __repr__(self):
-        return ' {}   {}'.format(self.roll_no,  self.name)
-    #result = relationship("StudentCourse")
+        return ' {}   {}'.format(self.roll_no, self.name)
+    # result = relationship("StudentCourse")
     # , primaryjoin="and_(Student.roll_no==StudentCourse.roll_no,")
 
 
@@ -32,20 +32,28 @@ class StudentCourse(db.Model):
 
     def __repr__(self):
         return ' {}'.format(self.course_id)
-   # result = relationship("Student", primaryjoin="and_(Student.roll_no==StudentCourse.roll_no, ")
+
+
+# result = relationship("Student", primaryjoin="and_(Student.roll_no==StudentCourse.roll_no, ")
 
 
 db.create_all()
 
-#result = db.query(StudentCourse,Student).outerjoin(Student).all()
+u1 = Student(roll_no=4306, name="Akshay", address="Solapur", phone="78952146", age=21)
+s1 = StudentCourse(id=44, course_id=4, roll_no=9)
 
-result= db.query(Student).join(StudentCourse).all()
-
-#result = db.query(StudentCourse.course_id,Student.name,Student.age).filter(Student.roll_no == StudentCourse.roll_no).all()
-
-for i in result:
-    print i
-
-
-
-
+db.add(u1)
+db.add(s1)
+db.commit()
+#
+# #result = db.query(StudentCourse,Student).outerjoin(Student).all()
+#
+# result= db.query(Student).join(StudentCourse).all()
+#
+# #result = db.query(StudentCourse.course_id,Student.name,Student.age).filter(Student.roll_no == StudentCourse.roll_no).all()
+#
+# for i in result:
+#     print i
+#
+#
+#
