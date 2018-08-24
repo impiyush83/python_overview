@@ -1,4 +1,4 @@
-# Python_Training
+# <i> python development overview </i>
 
 
-Covers SQLAlchemy Basics, Pytest ,Pyhamcrest, TDD Development in Python Basics. 
+<i>Covers sqlalchemy basics, pytest test cases, pyhamcrest, TDD development. </i> 
